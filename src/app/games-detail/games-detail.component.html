@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div    *ngIf="game$ | async as games"       class="card">
+        <div     class="card-body">
+
+          <h2 class="card-title text-center">{{ games.name }}</h2>
+          <p class="card-text">Type: {{ games.type }}</p>
+          <p class="card-text">Platform: {{ games.platform }}</p>
+          <p class="card-text">Rating: {{ games.rating }}</p>
+          <p class="card-text">Age Rating: {{ games.age }}</p>
+          <p class="card-text">Price: £{{ games.price }}</p>
+          <p class="card-text">Description: {{ games.description }}</p>
+          <div class="text-center">
+            <img [src]="games.label" class="img-fluid rounded mb-3" style="max-width: 400px;" alt="Game Image">
+          </div>
+         <div class="del">
+
+          <button (click)="update()" class="update btn btn-info">update</button>
+          <button (click)="delete()" class="delete btn btn-danger">delete</button>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

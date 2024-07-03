@@ -1,0 +1,19 @@
+.card {
+  width: 1000px;
+  // height: 70%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  img {
+    display: block;
+    height: 450px;
+    width: 350px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}
+
+.form-group {
+  input {
+    padding: 1rem 0.7rem;
+  }
+}
