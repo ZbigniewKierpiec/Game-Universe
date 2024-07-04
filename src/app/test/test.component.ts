@@ -5,13 +5,13 @@ import { NgFor, NgIf } from '@angular/common';
 import { GameService } from '../Services/game.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { TrendingGamesComponent } from "../trending-games/trending-games.component";
 @Component({
-  selector: 'app-test',
-  standalone: true,
-  imports: [NgFor, NgIf],
-
-  templateUrl: './test.component.html',
-  styleUrl: './test.component.scss',
+    selector: 'app-test',
+    standalone: true,
+    templateUrl: './test.component.html',
+    styleUrl: './test.component.scss',
+    imports: [NgFor, NgIf, TrendingGamesComponent]
 })
 export class TestComponent {
   private gamesSubscription?: Subscription;
@@ -53,7 +53,7 @@ export class TestComponent {
       this.games = data;
       this.cdr.detectChanges();
     });
-   
+
 
   }
 
