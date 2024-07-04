@@ -1,41 +1,53 @@
-.container{
-
+.container {
 }
 
-.card-body{
-  background-color:whitesmoke;
+.card-body {
+  background-color: whitesmoke;
   border: none;
 }
 
-
-img{
-
+img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
   width: 300px;
   height: 450px;
-  object-fit:cover;
-  border-radius: .5rem;
-  -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.75);
-transition: .3s linear;
-transform: scale(1);
-&:hover{
-  -webkit-box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.75);
-transform: scale(1.03);
-}
-}
-
-.del{
-  width: 200px;
-  height: 7rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  button{
-    text-transform: capitalize;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.75);
+  transition: 0.3s linear;
+  transform: scale(1);
+  &:hover {
+    -webkit-box-shadow: 0px 0px 21px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px 6px rgba(0, 0, 0, 0.75);
+    transform: scale(1.03);
   }
+}
+
+img:hover ~ button {
+  transform: scale(1.03);
+}
+
+button {
+  position: absolute;
+  bottom: 4rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: transform 0.3s linear;
+}
+.update {
+  position: absolute;
+  background-color: white;
+  transition: 0.1s linear;
+  left: 22rem;
+}
+
+.delete {
+  right: 22rem;
+  background-color: white;
+  color: red;
 }

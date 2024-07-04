@@ -75,8 +75,9 @@
         <label for="label">Image URL</label>
         <input type="text" class="form-control" id="label" name="label" [(ngModel)]="editableGame!.label"  required>
         <img [src]="editableGame.label" alt="Game Image" class="img-fluid mt-2">
+        <button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-pencil" aria-hidden="true"></i>  </button>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Update</button>
+
     </form>
   </div>
 </div>

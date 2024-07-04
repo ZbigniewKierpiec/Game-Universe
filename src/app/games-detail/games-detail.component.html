@@ -13,11 +13,12 @@
           <p class="card-text">Description: {{ games.description }}</p>
           <div class="text-center">
             <img [src]="games.label" class="img-fluid  mb-3" style="max-width: 400px;" alt="Game Image">
+            <button (click)="update()" class="update btn"> <i class="fa fa-pencil" aria-hidden="true"></i></button>
+            <button (click)="delete()" class="delete btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
           </div>
          <div class="del">
 
-          <button (click)="update()" class="update btn btn-info">update</button>
-          <button (click)="delete()" class="delete btn btn-danger">delete</button>
+
          </div>
         </div>
       </div>

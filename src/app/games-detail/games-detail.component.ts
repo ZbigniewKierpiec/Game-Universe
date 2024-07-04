@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../Services/game.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export interface Game {
   id: number;
   name: string;
@@ -17,7 +20,7 @@ export interface Game {
 @Component({
   selector: 'app-games-detail',
   standalone: true,
-  imports: [NgFor, AsyncPipe, NgIf],
+  imports: [NgFor, AsyncPipe, NgIf,    FontAwesomeModule ],
   templateUrl: './games-detail.component.html',
   styleUrl: './games-detail.component.scss',
 })
