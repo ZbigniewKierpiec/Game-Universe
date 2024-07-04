@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'view/game', component: TestComponent },
+
   { path: 'game-details/:id', component: GamesDetailComponent},
   {path:'game-update/:id',component:UpdateComponentComponent},
   { path: 'add/game', component: AddGameComponent },

@@ -31,6 +31,21 @@ export class TestComponent {
     this.router.navigate(['/game-details', gameId]);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ngOnInit(): void {
     this.cdr.detectChanges();
   this.gamesSubscription   =  this.gameservice.getGames().subscribe((data) => {
@@ -38,6 +53,8 @@ export class TestComponent {
       this.games = data;
       this.cdr.detectChanges();
     });
+   
+
   }
 
   ngOnDestroy(): void {

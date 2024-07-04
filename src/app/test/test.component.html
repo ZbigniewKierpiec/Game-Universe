@@ -3,6 +3,17 @@
 <div class="container">
   <div class="table-container">
     <h2 class="text-center mb-4">Top <span>{{games.length}}</span> Games</h2>
+
+
+
+
+
+
+
+
+
+
+
     <div class="table-responsive">
       <table class="table table-striped table-bordered  table-hover">
         <thead class="thead-dark">
@@ -15,7 +26,7 @@
             <th>Age Rating</th>
             <th>Price</th>
             <th>Description</th>
-            <th>Image</th>
+            <th>Cover</th>
           </tr>
         </thead>
         <tbody *ngFor="let item of games , let i = index" (click)="goToGameDetails(item.id)"        >

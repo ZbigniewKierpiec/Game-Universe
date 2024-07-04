@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { GameService } from '../Services/game.service';
 import { FormsModule } from '@angular/forms';
@@ -18,15 +18,16 @@ export class UpdateComponentComponent {
   games?: Game;
   gameId?: any;
   editableGame: Game | null = null; // Initialize as null
-  name?:string='';
+  name?: string = '';
   constructor(
     private route: ActivatedRoute,
     private gameService: GameService,
-    private apollo: Apollo
+    private apollo: Apollo,
+    private router: Router
   ) {}
 
   onUpdate() {
-    const updateGameData:Game = {
+    const updateGameData: Game = {
       id: this.gameId,
       name: this.editableGame!.name,
       type: this.editableGame!.type,
@@ -38,22 +39,13 @@ export class UpdateComponentComponent {
       label: this.editableGame!.label,
     };
 
-    this.name = this.editableGame?.name
-//  const updateGameData = {
-//       id:this.gameId,
-//       name: 'Red Dead Redemption 2',
-//       type:'Action-Adventure, Open World',
-//       description:'An action-adventure game set in the American Wild West, following outlaw Arthur Morgan and the Van der Linde gang as they rob, steal, and fight across the frontier.',
-//       rating:9,
-//       platform: 'PC, Xbox, PlayStation.',
-//       age: 17,
-//       price:49.99,
-//       label:'https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png',
-//     };
+    this.name = this.editableGame?.name;
 
     this.gameService.updateGame(updateGameData).subscribe({
       next: (data) => {
         console.log('Muttation Success', data);
+
+        this.router.navigate(['view/game']);
       },
       error: (error) => {
         console.error('Mutation error.', error);
@@ -71,7 +63,6 @@ export class UpdateComponentComponent {
       this.gameService.getGameById(this.gameId).subscribe((data) => {
         this.games = data;
         this.editableGame = { ...data };
-
       });
     });
   }
