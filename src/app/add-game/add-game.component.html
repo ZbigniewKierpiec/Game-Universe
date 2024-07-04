@@ -1,5 +1,5 @@
 
-<div class="container mt-5">
+<div     [classList]="true ?'container animate__animated animate__fadeIn ':''"               class="container mt-5">
   <h2 class="mb-4">Add Game</h2>
   <form  (ngSubmit)="addNewGame()"        >
 
